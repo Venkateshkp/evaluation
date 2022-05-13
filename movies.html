@@ -29,7 +29,7 @@
                 font-weight: bold;
             }
             .center{
-                padding-left: 31.5%;
+                padding-left: 33.5%;
             }
 
             #container > div {
@@ -52,11 +52,6 @@
             h3{
                 color: white;
                 text-align: center;
-            }
-            .img1{
-                width: 400px;
-                height: 400px; 
-                padding-left: 32%; 
             }
 
         </style>
@@ -84,19 +79,6 @@
                 let res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`);
                 // let res = await fetch(`https://pokeapi.co/api/v2/ability/?limit=20&offset=20`);
                 let data = await res.json();
-                if(data.Response == "True"){
-                //console.log(data.length);
-                    console.log(data);
-                    displayData(data.Search);
-                }
-                else if(movie.length > 0){
-                    console.log(data);
-                    let gif = "https://media1.giphy.com/media/d906FK91VCXsbDxBu6/giphy.gif?cid=ecf05e47rx2246hmi2rx6rvqegor49t2vha167mbxx0k3llu&rid=giphy.gif&ct=g";
-                    let image = document.createElement("img");
-                    image.setAttribute("class", "img1");
-                    image.src = gif;
-                    container.append(image);
-                }
                 return data.Search;
             } 
             catch(err){
@@ -117,6 +99,7 @@
                 //console.log(movies_title.Title);
                 
                 movies_div.append(title);
+                movies_div.style.cursor = "pointer";
                 title.addEventListener('click',(e)=>{
                     console.log(e.target.textContent);
                     reqMovie(e.target.textContent);
@@ -144,6 +127,7 @@
         reqMovie();
 
         function displaymyMovie(data){
+            container.innerHTML = "";
             let product = document.createElement("div");
 
             let image = document.createElement("img");
