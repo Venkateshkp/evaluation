@@ -4,10 +4,15 @@
     </head>
     <body>
         <div>
-            <input type="text" id="heading" name="heading">
-            <label for="heading"></label>
-            <input type="checkbox" id="title"><br>
-            <button id="click" onclick="getData()">Add</button>
+            <form id="form" method="post">
+                <input type="text" id="heading" name="heading">
+                <input type="checkbox" id="myCheck" onclick="checkFunction()"><br>
+                <!-- <label for="heading"></label><br> -->
+                <input type="submit" value="Add Todo" id="click"/>
+            </form>
+            <div id="container">
+
+            </div>
         </div>
     </body>
     <script src="Todo.js"></script>
