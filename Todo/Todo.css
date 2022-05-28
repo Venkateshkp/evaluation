@@ -1,0 +1,20 @@
+#heading{
+    padding-bottom: 20px;
+    width: 200px;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 600px;
+    height: 30px;
+    font-size: large;
+}
+#title{
+    margin-top: 50px;
+    height: 30px;
+    width: 40px;
+}
+#click{
+    height: 30px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 700px;
+}
