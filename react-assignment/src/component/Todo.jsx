@@ -26,10 +26,10 @@ const Todo = () => {
     ]
     return(
         <div>
-            <h1>Todo List</h1>
+            <h1 style={{"padding-top": "50px"}}>Todo List</h1>
             {data.map((item)=>(
                 <TodoList {...item}/>
-            ))}
+            ))}    
         </div>
     )
 }

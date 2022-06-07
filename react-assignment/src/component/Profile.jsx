@@ -1,22 +1,12 @@
 import React from "react";
-import Details from "./Details";
 const Profile = () => {
 
     const [age, setAge] = React.useState(18);
-
-    // const [state, setState] = React.useState({
-    //     // state: false,
-    //     divContainer: false,
-    // })
+    const [show, setShow] = React.useState(true);
 
     function changeAge(value){
         setAge(value);
     }
-    // var handleChange = e => {
-    //     this.setState({divContainer:!this.state.divContainer});
-    // }
-
-    // const x = this.state.divContainer;
 
     return(
         <div>
@@ -25,15 +15,15 @@ const Profile = () => {
             <h1>Age: {age}</h1>
             <button onClick={()=>changeAge(age+1)}>INCREASE AGE</button>
             <button onClick={()=>changeAge(age-1)}>DECREASE AGE</button><br></br>
-            <button onClick={<Details/>}>SHOW DETAILS</button>
-            {/* {
-                x&&(
+            <button onClick={()=>setShow(!show)}>{
+                show?("HIDE DETAILS"):("SHOW DETAILS")
+            }</button>
+            {
+                show? (
                     <div>
-                        <h1>Location: Masai School</h1>
-                        <h1>Organisation: Bengaluru</h1>
-                    </div>
-                )
-            } */}
+                        <h1>Location: Bengaluru <br></br> Organisation: Masai School</h1>
+                    </div>):null
+            }
         </div>
     )
 }
